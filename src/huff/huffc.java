@@ -221,11 +221,21 @@ public class huffc {
 	
 	public static void main(String[] args)
 	{
-	
+		countAlphabetFrequency("src/harry.txt");
 		long tt = System.currentTimeMillis();
 		makeHuffmanTree();
 		
 	
+		int []arr = new int[freq.size()-1];
+		//System.out.println("각 문자의 빈도수 ------ ");
+		//printFreq();
+
+		System.out.println("각 문자에 할당된 코드 -------- ");
+		printEachCharacterCode(huffmanTree, arr, 0);
+		tt = System.currentTimeMillis() - tt;
+		System.out.println("huff 압축시간:"+ tt + " ms."); 
+		System.out.println("허프만 압축 전: "+chartotal*8+"bit");
+		System.out.println("허프만 압축 후: "+bitotal+"bit");
 		
 	}
 }
