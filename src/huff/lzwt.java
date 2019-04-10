@@ -98,6 +98,19 @@ public static String countAlphabetFrequency(String src)
  
  public static void main( String args[] ) { 
    
+ 
+  String str1=countAlphabetFrequency("src/harry.txt");
+  long tt = System.currentTimeMillis(); 
+  String c = compress( str1 ); 
+  tt = System.currentTimeMillis() - tt; 
+  System.out.println("Compressed: (" + str1.length() + " -> " + c.length() + " chars) in " + tt + " ms."); 
+  if (args.length > 0) { 
+   System.out.println("---COMPRESSED DATA FOLLOWS\r\n" + c + "\r\nEND OF DATA---"); 
+  } 
+ 
+  System.out.println("A saving of: " + (str1.length() - c.length()) + " chars.");
+  System.out.println("lzw 압축 전: "+(str1.length())*8+"bit");
+  System.out.println("lzw 압축 후 : "+(c.length())*8+"bit");
 
    
  } 
